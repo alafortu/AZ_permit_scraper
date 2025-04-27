@@ -4,7 +4,7 @@ import time
 import csv
 from datetime import datetime, timedelta
 
-# --- PhoenixPermitScraper Class Definition (Keep as is from previous response) ---
+# --- PhoenixPermitScraper Class Definition ---
 class PhoenixPermitScraper:
     """
     A class to scrape solar permit data from the City of Phoenix PDD API.
@@ -116,7 +116,7 @@ class PhoenixPermitScraper:
         """
         all_permits = []
         current_page = 1
-        total_records = 0 # We'll get this from the first request
+        total_records = 0 
 
         print(f"Fetching solar permits from {start_date_str} to {end_date_str}...")
 
@@ -189,7 +189,7 @@ class PhoenixPermitScraper:
 
         print(f"Finished fetching. Total processed permits: {len(all_permits)}")
         return all_permits
-# --- Function to save data to CSV (Keep as is from previous response) ---
+# --- Function to save data to CSV  ---
 def save_to_csv(data, filename):
     """
     Saves a list of dictionaries to a CSV file.
@@ -220,13 +220,13 @@ def save_to_csv(data, filename):
 
 # --- Main execution block ---
 if __name__ == "__main__":
-    # --- MODIFICATION ---
-    # Set the specific date range from your example to fetch the 176 permits
+   
+    # Set the specific date range
     start_date_to_fetch = "03/27/2025"
     end_date_to_fetch = "04/26/2025"
     # Use a relevant identifier for the filename for this specific range
     run_date_str = "20250327-20250426"
-    # --- END MODIFICATION ---
+    
 
 
     # Define the output filename
@@ -234,7 +234,7 @@ if __name__ == "__main__":
 
     print("-" * 50)
     print("Starting Phoenix Solar Permit Scraper")
-    print(f"Target Date Range: {start_date_to_fetch} to {end_date_to_fetch}") # This range should yield ~176 results
+    print(f"Target Date Range: {start_date_to_fetch} to {end_date_to_fetch}") 
     print(f"Output file: {output_filename}")
     print("-" * 50)
 
